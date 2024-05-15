@@ -4,20 +4,21 @@ import { HomeComponent } from './home/home.component';
 import { AppComponent } from './app.component';
 import { LogHistoryComponent } from './log-history/log-history.component';
 import { SendMessageComponent } from './send-message/send-message.component';
+import { FormsModule } from '@angular/forms';
+import { MatSelectModule } from '@angular/material/select';
 const extraOptions: ExtraOptions = {
   scrollPositionRestoration: 'enabled',
   anchorScrolling: 'enabled',
 };
 const routes: Routes = [
-  { path: 'home', component: HomeComponent, pathMatch: 'full' },
   {
     path: '',
     component: AppComponent,
     pathMatch: 'full',
   },
   {
-    path: '',
-    redirectTo: '',
+    path: 'home',
+    component: HomeComponent,
     pathMatch: 'full',
   },
   {
@@ -33,7 +34,10 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, extraOptions)],
-  exports: [RouterModule],
+  imports: [RouterModule.forRoot(routes, extraOptions),
+            FormsModule,
+            MatSelectModule
+  ],
+  exports: [RouterModule, MatSelectModule],
 })
 export class AppRoutingModule {}
