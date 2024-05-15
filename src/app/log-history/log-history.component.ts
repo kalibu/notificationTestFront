@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DataService } from '../service/data.service';
+import { LogHistoryService } from '../service/log-history.service';
 import { LogHistoryEntity } from '../entity/logHistoryEntity';
 
 @Component({
@@ -9,12 +9,12 @@ import { LogHistoryEntity } from '../entity/logHistoryEntity';
 })
 export class LogHistoryComponent implements OnInit {
   logs: LogHistoryEntity[] = [];
-  constructor(private dataService: DataService) {}
+  constructor(private logHistoryService: LogHistoryService) {}
   ngOnInit(): void {
     this.fetchData();
   }
   fetchData() {
-    this.dataService.fetchData().subscribe((logs) => {
+    this.logHistoryService.fetchData().subscribe((logs) => {
       this.logs = logs;
     });
   }

@@ -8,11 +8,13 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { LogHistoryComponent } from './log-history/log-history.component';
+import { SendMessageComponent } from './send-message/send-message.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LogHistoryComponent,
+    SendMessageComponent,
   ],
   imports: [
     BrowserModule,
