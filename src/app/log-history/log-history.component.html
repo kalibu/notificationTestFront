@@ -1,0 +1,18 @@
+<div class="container mt-5">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>User</th>
+            <th>Category</th>
+            <th>Notification Type</th>
+            <th>Notification Date</th>
+        </tr>
+        <tr *ngFor="let logHistory of logs">
+            <td>{{logHistory.id}}</td>
+            <td>{{logHistory.user}}</td>
+            <td>{{logHistory.category}}</td>
+            <td>{{logHistory.notificationType}}</td>
+            <td>{{logHistory.notificationDate}}</td>
+        </tr>
+    </table>
+</div>
