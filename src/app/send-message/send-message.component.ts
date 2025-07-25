@@ -11,7 +11,7 @@ import { NotificationReturnEntity } from '../entity/notificationReturn';
 })
 export class SendMessageComponent implements OnInit {
   categories: String[] = [];
-  selectedCategories: String[] = [];
+  selectedCategory: String = ""; 
 
   messageForm!: FormGroup;
 
@@ -34,7 +34,7 @@ export class SendMessageComponent implements OnInit {
   sendMessage() {
     const message = this.messageForm.value.message;
     const notification = new NotificationEntity();
-    notification.categories = this.selectedCategories;
+    notification.category = this.selectedCategory;
     notification.message = message;
 
     this.sendMessageService.sendMessage(notification).then((data: NotificationReturnEntity) => {

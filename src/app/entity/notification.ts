@@ -1,4 +1,4 @@
 export class NotificationEntity {
   message!: string;
-  categories!: String[];
+  category!: String;
 }

@@ -10,11 +10,13 @@
         <div class="form-group">
             <label for="categories">Categories:</label>
             <mat-form-field id="categories">
-                <mat-label>Select your categories</mat-label>
-                <mat-select [(value)]="selectedCategories" multiple>
-                <mat-option *ngFor="let category of categories" [value]="category">{{ category }}</mat-option>
-                </mat-select>
-          </mat-form-field>
+              <mat-label>Select your category</mat-label>
+              <mat-select [(value)]="selectedCategory">
+                <mat-option *ngFor="let category of categories" [value]="category">
+                  {{ category }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
           <br/>
           <label for="message">Message:</label>
           <textarea id="message" formControlName="message" rows="4" cols="50"></textarea>
